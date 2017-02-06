@@ -40,5 +40,19 @@ public class TestCraw {
             e.printStackTrace();
         }
     }
+    @Test
+    public void testCraw3(){
+        try {
+            List<News> newses = craw.crawl163News();
+            for(News news:newses){
+                System.out.println("==================================");
+                System.out.println(news);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
