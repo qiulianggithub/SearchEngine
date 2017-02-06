@@ -89,36 +89,38 @@ public class Craw {
         return list;
     }
     public  List<News> crawl163News() throws IOException, ParseException{
-
         Whitelist.simpleText();
         List<News> list=new ArrayList<News>();
-        for (int i=0;i<20;i++){
-            String page = leftpad(2,i);
-            //加载文档
-            Document doc=Jsoup.connect("http://www.163.com").get();
-            //获取头条新闻
-            Elements es=doc.getElementsByClass("newsList");
-            Elements ess = es.first().children();
-            News news=null;
-            for(Element element:ess){
-                Element a = element.getElementsByTag("a").first();
-                if(a==null){
-                    continue;
-                }
-                String date = element.getElementsByClass("sourceDate").first().text();
-                date =  filterChinese(date);
-                news=new News();
-                news.setTitle(a.text());
-                news.setUrl(a.attr("href"));
-                news.setShortContent(a.text());
-                news.setDate(date);
-                doc=Jsoup.connect(a.attr("href")).get();
-                if(null!=doc.getElementById("endText")){
-                    news.setContent(doc.getElementById("endText").children().text());
+        Document doc=Jsoup.connect("http://www.163.com").get();
+        Elements es = doc.getElementsByTag("a");
+        for(Element e:es){
+            if(e!=null&&e.attr("href")!=null){
+                Document doc2 = Jsoup.connect(e.attr("href")).get();
+                News n = new News();
+                if(null!=doc2.getElementById("endText")){
+                    n.setTitle(e.text());
+                    n.setShortContent(e.text());
+                    n.setUrl(e.attr("href"));
+                    n.setContent(doc.getElementById("endText").children().text());
                 }else{
-                    news.setContent("链接无法访问");
+                    //不是新闻详情页，继续往深入爬虫
+                    Document doc3 = Jsoup.connect(e.attr("href")).get();
+                    Elements es2 = doc3.getElementsByTag("a");
+                    for(Element e2:es2){
+                        if(e2!=null&&e2.attr("href")!=null){
+                            if(null!=e2.getElementById("endText")){
+                                n.setTitle(e2.text());
+                                n.setShortContent(e2.text());
+                                n.setUrl(e2.attr("href"));
+                                n.setContent(doc3.getElementById("endText").children().text());
+                            }else{
+                                n.setContent("链接不能访问");
+                            }
+                        }
+
+                    }
+
                 }
-                list.add(news);
             }
         }
         return list;
