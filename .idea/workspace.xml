@@ -67,8 +67,8 @@
       <file leaf-file-name="Craw.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ql/crawl/Craw.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5455608" vertical-offset="2575" max-vertical-offset="4446">
-              <caret line="117" column="40" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.48598132" vertical-offset="2808" max-vertical-offset="4446">
+              <caret line="124" column="33" selection-start-line="124" selection-start-column="33" selection-end-line="124" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#920#926#0" expanded="true" />
@@ -678,12 +678,12 @@
       <updated>1486307026517</updated>
       <workItem from="1486345339452" duration="10101000" />
       <workItem from="1486360153205" duration="1134000" />
-      <workItem from="1486366952260" duration="20561000" />
+      <workItem from="1486366952260" duration="20912000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31796000" />
+    <option name="totallyTimeSpent" value="32147000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1049,8 +1049,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ql/crawl/Craw.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5455608" vertical-offset="2575" max-vertical-offset="4446">
-          <caret line="117" column="40" selection-start-line="117" selection-start-column="40" selection-end-line="117" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.48598132" vertical-offset="2808" max-vertical-offset="4446">
+          <caret line="124" column="33" selection-start-line="124" selection-start-column="33" selection-end-line="124" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#920#926#0" expanded="true" />
